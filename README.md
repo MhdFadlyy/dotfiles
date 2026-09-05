@@ -22,3 +22,7 @@ dotfiles add ~/.config/foo/bar.conf
 dotfiles commit -m "..."
 dotfiles push
 ```
+
+## Conventions
+
+See `AGENTS.md` for repo-specific rules (what gets tracked, commit style, tool ownership).
