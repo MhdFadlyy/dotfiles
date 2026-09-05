@@ -1,0 +1,47 @@
+#!/bin/bash
+# Read-only health check for the contracts stated in ~/AGENTS.md.
+# Checks only what that file already claims — add a check here only when
+# AGENTS.md gains a new stated contract to verify.
+set -euo pipefail
+
+status=0
+pass() { printf 'PASS  %s\n' "$1"; }
+fail() { printf 'FAIL  %s\n' "$1"; status=1; }
+open() { printf 'OPEN  %s\n' "$1"; }
+
+# 1. Every tool pinned in mise's config.toml resolves on PATH (either via a
+#    hand-rolled ~/.local/bin wrapper like `claude`, or via mise's own shell
+#    activation for runtimes like `node`).
+mise_conf="$HOME/.config/mise/config.toml"
+if [[ -f "$mise_conf" ]]; then
+    tools=$(awk '/^\[tools\]/{f=1;next} /^\[/{f=0} f && NF {sub(/[[:space:]]*=.*/,""); print}' "$mise_conf")
+    for tool in $tools; do
+        if command -v "$tool" >/dev/null 2>&1; then
+            pass "mise tool '$tool' resolves on PATH"
+        else
+            fail "mise tool '$tool' pinned in config.toml but not found on PATH"
+        fi
+    done
+else
+    fail "mise config not found at $mise_conf"
+fi
+
+# 2. voxtype.service (the one hand-relevant systemd user unit AGENTS.md
+#    calls out) is enabled and active.
+if systemctl --user is-enabled --quiet voxtype.service 2>/dev/null \
+    && systemctl --user is-active --quiet voxtype.service 2>/dev/null; then
+    pass "voxtype.service enabled and active"
+else
+    fail "voxtype.service not enabled+active"
+fi
+
+# 3. AGENTS.md 'Known gap to close': herdr/voxtype config tracking.
+tracked=$(git --git-dir="$HOME/.dotfiles" --work-tree="$HOME" \
+    ls-files -- '.config/herdr' '.config/voxtype' 2>/dev/null)
+if [[ -n "$tracked" ]]; then
+    pass "herdr/voxtype config tracked in dotfiles"
+else
+    open "herdr/voxtype config not yet tracked (see AGENTS.md 'Known gap to close')"
+fi
+
+exit "$status"

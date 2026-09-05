@@ -52,6 +52,14 @@ not an aspiration.
   add both.
 - State/log files stay untracked regardless: `herdr` `session.json`, `*.log`, `.plugins.lock`.
 
+## Doctor
+
+`~/.local/bin/dotfiles-doctor` is a manual, read-only health check — no timer runs it, since no automation
+exists on this machine yet. It checks only contracts this file already states: every `mise`-pinned tool
+resolves on `PATH`, `voxtype.service` is enabled and active, and whether the herdr/voxtype tracking gap above
+is still open. A new contract earns a check here only when it's first written as a rule elsewhere in this file
+— never invent a check this file doesn't already claim.
+
 ## Git workflow
 
 Global git conventions this repo relies on — don't change casually: `pull.rebase = true`,
