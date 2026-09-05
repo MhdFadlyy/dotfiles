@@ -32,3 +32,6 @@
 [credential "https://gist.github.com"]
 	helper = 
 	helper = !/home/pali/.local/share/mise/installs/gh/2.100.0/gh_2.100.0_linux_amd64/bin/gh auth git-credential
+[user]
+	name = MhdFadlyy
+	email = m.fadly020@gmail.com
