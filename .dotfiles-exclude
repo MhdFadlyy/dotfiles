@@ -9,3 +9,6 @@ __pycache__/
 .config/omarchy/shell.json
 .config/omarchy/themed/*
 .config/hypr/*.bak.*
+.config/herdr/*.log
+.config/herdr/session.json
+.config/herdr/.plugins.lock

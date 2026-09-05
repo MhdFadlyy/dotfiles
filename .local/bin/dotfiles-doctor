@@ -7,7 +7,6 @@ set -euo pipefail
 status=0
 pass() { printf 'PASS  %s\n' "$1"; }
 fail() { printf 'FAIL  %s\n' "$1"; status=1; }
-open() { printf 'OPEN  %s\n' "$1"; }
 
 # 1. Every tool pinned in mise's config.toml resolves on PATH (either via a
 #    hand-rolled ~/.local/bin wrapper like `claude`, or via mise's own shell
@@ -35,13 +34,13 @@ else
     fail "voxtype.service not enabled+active"
 fi
 
-# 3. AGENTS.md 'Known gap to close': herdr/voxtype config tracking.
+# 3. herdr/voxtype config stays tracked (AGENTS.md Layout section).
 tracked=$(git --git-dir="$HOME/.dotfiles" --work-tree="$HOME" \
-    ls-files -- '.config/herdr' '.config/voxtype' 2>/dev/null)
-if [[ -n "$tracked" ]]; then
+    ls-files -- '.config/herdr/config.toml' '.config/voxtype/config.toml' 2>/dev/null)
+if [[ $(printf '%s\n' "$tracked" | grep -c .) -eq 2 ]]; then
     pass "herdr/voxtype config tracked in dotfiles"
 else
-    open "herdr/voxtype config not yet tracked (see AGENTS.md 'Known gap to close')"
+    fail "herdr/voxtype config missing from dotfiles tracking"
 fi
 
 exit "$status"

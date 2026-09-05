@@ -12,9 +12,11 @@ not an aspiration.
 ## Layout
 
 - Tracked set is small and deliberate: root dotfiles (`.bashrc`, `README.md`, this file, `pkglist-pacman.txt`,
-  `pkglist-aur.txt`), specific files under `.config/<tool>/` (alacritty, btop, Code, foot, ghostty, git, hypr,
-  kitty, lazygit, mise, nvim, omarchy, starship, tmux, ...), and the CLI wrapper shims under `.local/bin/`.
-  Nothing outside that list is assumed to be tracked.
+  `pkglist-aur.txt`), specific files under `.config/<tool>/` (alacritty, btop, Code, foot, ghostty, git, herdr,
+  hypr, kitty, lazygit, mise, nvim, omarchy, starship, tmux, voxtype, ...), `.config/systemd/user/voxtype.service`,
+  and the CLI wrapper shims under `.local/bin/`. Nothing outside that list is assumed to be tracked.
+- `herdr`'s `config.toml` mirrors the already-tracked `.config/tmux/tmux.conf`; its `session.json`, `*.log`, and
+  `.plugins.lock` are state/logs, not config, and stay untracked (denied in `.dotfiles-exclude`).
 - `.dotfiles-exclude` denies known noise *inside* directories we already track — e.g. Omarchy's Hyprland-settings
   TUI writes `*.bak.<timestamp>` next to `hypr/*.lua` on every edit, and `omarchy/plugins/*` are installed
   artifacts, not config. It is not the tracking boundary itself: things like `.cache` are simply never `add`ed,
@@ -53,20 +55,13 @@ not an aspiration.
 - `~/.agents/skills/*` and `~/.pi/agent/skills/*` are Omarchy-owned symlinks into `/usr/share/omarchy/...`. Never
   track them in this repo, never edit through the symlink.
 
-## Known gap to close
-
-- `.config/herdr/` mirrors the already-tracked `.config/tmux/tmux.conf` but is itself untracked — add it.
-- `.config/voxtype/` (config) and `.config/systemd/user/voxtype.service` are hand-configured but untracked —
-  add both.
-- State/log files stay untracked regardless: `herdr` `session.json`, `*.log`, `.plugins.lock`.
-
 ## Doctor
 
 `~/.local/bin/dotfiles-doctor` is a manual, read-only health check — no timer runs it, since no automation
 exists on this machine yet. It checks only contracts this file already states: every `mise`-pinned tool
-resolves on `PATH`, `voxtype.service` is enabled and active, and whether the herdr/voxtype tracking gap above
-is still open. A new contract earns a check here only when it's first written as a rule elsewhere in this file
-— never invent a check this file doesn't already claim.
+resolves on `PATH`, `voxtype.service` is enabled and active, and that `herdr`/`voxtype` config stays tracked
+per the Layout section above. A new contract earns a check here only when it's first written as a rule
+elsewhere in this file — never invent a check this file doesn't already claim.
 
 ## Git workflow
 
