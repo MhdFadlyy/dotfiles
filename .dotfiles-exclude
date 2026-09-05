@@ -1,0 +1,11 @@
+*.log
+node_modules/
+__pycache__/
+.DS_Store
+*.swp
+.config/omarchy/plugins/*
+.config/omarchy/hooks/*
+.config/omarchy/branding/*
+.config/omarchy/shell.json
+.config/omarchy/themed/*
+.config/hypr/*.bak.*
