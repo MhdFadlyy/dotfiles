@@ -35,9 +35,8 @@ not an aspiration.
 
 ## Tool & package ownership
 
-- No Nix on this machine. OS packages come from `pacman`/`yay`. Installing a package and owning its config are
-  separate: this repo owns a config file only if it's explicitly tracked, regardless of how the package got
-  installed.
+- OS packages come from `pacman`/`yay`. Installing a package and owning its config are separate: this repo owns
+  a config file only if it's explicitly tracked, regardless of how the package got installed.
 - `.config/mise/config.toml` (tracked) is the single source of truth for tool-CLI versions (`claude`, `codex`,
   `gh`, `node`, ...). `~/.local/bin/*` shims are derived from it, never edited directly.
 - Default AI agent selection (`.config/omarchy/defaults/agent`) and global Claude Code behavior defaults
