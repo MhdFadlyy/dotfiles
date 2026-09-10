@@ -49,6 +49,11 @@ hl.config({
   },
 })
 
+-- G733: roller volume di earcup nurunin gain firmware headset (16-bit, no
+-- dither) -> suara mendam. Matiin device-nya; volume diatur lewat keyboard /
+-- bar aja. Roller di-set mentok atas satu kali secara fisik.
+hl.device({ name = "logitech-g733-gaming-headset-consumer-control", enabled = false })
+
 -- App-specific touchpad scroll speeds.
 -- o.window("(Alacritty|kitty|foot)", { scroll_touchpad = 1.5 })
 -- o.window("com.mitchellh.ghostty", { scroll_touchpad = 0.2 })
