@@ -12,7 +12,7 @@
     logivoice-hpf-state]
   _battery: 7968
   _modelId: 0AFE00000000
-  _sensitive: {adc_power_management: false, led_control: false, led_zone_2: false}
+  _sensitive: {adc_power_management: false, equalizer: false, led_control: false, led_zone_2: false}
   _unitId: FFFFFFFF
   adc_power_management: 0
   divert-gkeys: false
@@ -34,6 +34,7 @@
     logivoice-limiter-state, logivoice-hpf-state]
   _battery: 4096
   _modelId: '407400000000'
+  _sensitive: {hires-scroll-mode: ignore, hires-smooth-invert: ignore, hires-smooth-resolution: ignore}
   _serial: 08146441
   _unitId: F7CCE021
   _wpid: '4074'
