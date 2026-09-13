@@ -71,6 +71,7 @@ inotify-tools
 intel-lpmd
 intel-ucode
 inxi
+jdk21-openjdk
 jq
 kdenlive
 kernel-modules-hook
@@ -97,6 +98,7 @@ luarocks
 man-db
 mariadb-libs
 mise-bin
+mkdocs-material
 mkinitcpio
 moonlight-qt
 mpv
@@ -135,6 +137,7 @@ power-profiles-daemon
 python-cryptography
 python-gobject
 python-poetry-core
+python-pymdown-extensions
 qemu-desktop
 qemu-user-static-binfmt
 qrencode
@@ -142,6 +145,7 @@ qt6-imageformats
 quickshell
 ripgrep
 ruby
+ruff
 sddm
 slurp
 socat
@@ -171,6 +175,7 @@ ufw
 ufw-docker
 usage
 uwsm
+vhs
 virt-install
 virt-manager
 visual-studio-code-bin
@@ -185,6 +190,7 @@ xdg-desktop-portal-gtk
 xdg-desktop-portal-hyprland
 xdg-terminal-exec
 xournalpp
+yamllint
 yaru-icon-theme
 yay
 yt-dlp

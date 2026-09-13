@@ -1,4 +1,7 @@
+android-sdk-cmdline-tools-latest
+bibata-cursor-theme
 epson-inkjet-printer-escpr
+flutter-bin
 headsetkontrol
 hyprmoncfg-bin
 pass-import
