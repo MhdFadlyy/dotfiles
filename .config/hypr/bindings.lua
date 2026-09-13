@@ -17,6 +17,8 @@
 
 o.bind("SUPER + ALT + L", "Screensaver", "omarchy-launch-screensaver force")
 
+o.bind("SUPER + CTRL + G", "God's Eye View", "gods-eye-view")
+
 -- Change an existing binding by unbinding it first, then binding the key again.
 -- This example changes SUPER+SPACE from the launcher to the Omarchy root menu.
 -- hl.unbind("SUPER + SPACE")

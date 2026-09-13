@@ -15,3 +15,6 @@ source "$OMARCHY_PATH/default/bash/rc"
 
 # Dotfiles bare-repo management (~/.dotfiles), work-tree = $HOME
 dotfiles() { git --git-dir="$HOME/.dotfiles/" --work-tree="$HOME" "$@"; }
+
+export FLYCTL_INSTALL="/home/pali/.fly"
+export PATH="$FLYCTL_INSTALL/bin:$PATH"

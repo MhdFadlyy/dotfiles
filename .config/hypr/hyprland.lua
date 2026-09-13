@@ -27,3 +27,7 @@ require("default.hypr.toggles")
 
 -- Add any other personal Hyprland configuration below.
 -- o.window("qemu", { workspace = "5" })
+
+-- Cursor theme
+hl.env("HYPRCURSOR_THEME", "Bibata-Modern-Ice")
+hl.env("XCURSOR_THEME", "Bibata-Modern-Ice")
