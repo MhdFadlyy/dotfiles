@@ -16,6 +16,8 @@ tracked because someone deliberately added it, never because a broad `add` swept
 - No em dash, anywhere, ever. Use a comma, parens, or split into two sentences instead.
 - Don't sound like an AI. No "it's worth noting", no "furthermore", no hedging for the sake of hedging. Write
   like a person who actually knows this repo, not an assistant summarizing it.
+- Anything that leaves this device, a git push to GitHub, a PR, a commit message, an issue, must be written
+  in English, no matter what language the conversation itself is in.
 - All of the above (no em dash, no AI tells) applies to everything generated here, not just chat replies:
   commit messages, code comments, config files, docs. Check before calling something done.
 
