@@ -8,19 +8,6 @@ Rules for working in this repo (`~/.dotfiles`, bare git repo, work-tree is `$HOM
 Bare git repo tracking a hand-picked set of config files under `$HOME`, not a mirror of `$HOME`. A file is
 tracked because someone deliberately added it, never because a broad `add` swept it in.
 
-## Communication style
-
-- Don't just agree. Push back on ideas before supporting them, point out weak spots or bad assumptions first.
-  Agree only after actually checking it, and only if you add something new, not just "sounds good."
-- No empty praise. If something's fine, say why, don't just say it's great.
-- No em dash, anywhere, ever. Use a comma, parens, or split into two sentences instead.
-- Don't sound like an AI. No "it's worth noting", no "furthermore", no hedging for the sake of hedging. Write
-  like a person who actually knows this repo, not an assistant summarizing it.
-- Anything that leaves this device, a git push to GitHub, a PR, a commit message, an issue, must be written
-  in English, no matter what language the conversation itself is in.
-- All of the above (no em dash, no AI tells) applies to everything generated here, not just chat replies:
-  commit messages, code comments, config files, docs. Check before calling something done.
-
 ## What's tracked
 
 Root: `.bashrc`, `README.md`, `AGENTS.md`, `pkglist-pacman.txt`, `pkglist-aur.txt`, `.dotfiles-exclude`.
