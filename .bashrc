@@ -18,3 +18,5 @@ dotfiles() { git --git-dir="$HOME/.dotfiles/" --work-tree="$HOME" "$@"; }
 
 export FLYCTL_INSTALL="/home/pali/.fly"
 export PATH="$FLYCTL_INSTALL/bin:$PATH"
+
+export HAND_HOME="$HOME/secondhand-fleet"
