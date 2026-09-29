@@ -91,6 +91,8 @@ limine
 linux
 linux-firmware
 linux-headers
+linux-omarchy
+linux-omarchy-headers
 llvm
 localsend
 lua51
